@@ -1,0 +1,14 @@
+<h1>Insert Splitters</h1>
+<form>
+  <input placeholder="name" ng-model="name"></input>
+  <button ng-click="addUser(name)">Submit</button>
+</form>
+
+<div class="container">
+
+  <div ng-repeat="person in users.splitters | orderBy: 'name'">
+    {{ person.name }}
+  </div>
+</div>
+
+<button id="addedUsers" ng-click="shareData()">Done</a>

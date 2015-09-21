@@ -1,0 +1,65 @@
+@mixin inputGlobalStyle {
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid lightgrey;
+  padding: 5px;
+  font-size: 16px;
+  margin: 5px 2px;
+}
+
+img {
+  display: none;
+}
+
+input:focus, button:focus {
+  outline: none;
+}
+
+input {
+  @include inputGlobalStyle;
+}
+
+.item > div {
+  display: inline-block;
+}
+
+#quantity, #tip, #tax {
+  width: 50px;
+  @include inputGlobalStyle;
+}
+
+#description {
+  width: 300px;
+  @include inputGlobalStyle;
+}
+
+#price {
+  width: 50px;
+  @include inputGlobalStyle;
+}
+
+button {
+  @include inputGlobalStyle;
+}
+
+div {
+  font-size: 26px;
+}
+
+.container {
+  margin: 30px auto;
+}
+
+#addedUsers {
+  display: block;
+  background-color: lightgrey;
+  width: 70px;
+  text-align: center;
+  text-decoration: none;
+  @include inputGlobalStyle;
+}
+
+#addedUsers:hover, #addedUsers:active, #addedUsers:link, #addedUsers:visited {
+  text-decoration: none;
+  color: black;
+}

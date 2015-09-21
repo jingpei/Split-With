@@ -1,30 +1,18 @@
 <html>
 <head>
   <title>Bill Splitter</title>
-  <script src="./js/ocrad.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="js/ocrad.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.19/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.19/angular-route.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-  <style>
-    img {
-      display: none;
-    }
-  </style>
-</head>
-<body>
-  <img onload="readText(this)" id="img" src="giraffe.jpg" crossorigin="anonymous" display="none">
-  <canvas id="myCanvas" width="1000" height="1500"></canvas>
-  <script>
-    
-    function readText(image){
-      var c = document.getElementById('myCanvas');
-      c.width = image.width;
-      c.height = image.height;
-      var ctx = c.getContext('2d');
-      image.crossOrigin = "anonymous";
-      ctx.drawImage(image, 0, 0);
-      var parsedText = OCRAD(c);
-      console.log(parsedText);
-    }
+  <link rel="stylesheet" type="text/css" href="css/style.css">
 
-  </script>
+  <script src="app/app.js"></script>
+  <script src="app/people/splittersCtrl.js"></script>
+  <script src="app/receipt/receiptCtrl.js"></script>
+</head>
+<body ng-app='billSplitter'>
+  <ng-view></ng-view>
 </body>
 </html>
