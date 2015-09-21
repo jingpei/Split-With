@@ -17,28 +17,28 @@ Once the project moves into development, the press release can be used as a touc
  -->
  
 ## Heading ##
-  > Name the product in a way the reader (i.e. your target customers) will understand.
+  > Bill Splitter
 
 ## Sub-Heading ##
-  > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+  > For those who eat out with friends and can't calculate how much each person owes.
 
 ## Summary ##
-  > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+  > Take a picture of your bill and assign all paying parties the amount they owe. The tax and tip will be automatically calculated based on the final amount owed by each person. Let people pay you back however they want, even in cold hard cash! $$$
 
 ## Problem ##
-  > Describe the problem your product solves.
+  > There are two problems. 1.) Large groups are unable to determine how much is owed after tax and tip. 2.) Many bill splitters are built into a payment platform and operate under the assumption that all participants have an account. 
 
 ## Solution ##
-  > Describe how your product elegantly solves the problem.
+  > This bill splitter is abstracted from any payment platform. It spits out a computed contribution for each person who needs to pay and each party can pay in whatever form they please.
 
 ## Quote from You ##
-  > A quote from a spokesperson in your company.
+  > It's the middle child in a family where the eldest is a fully fleshed out payment platform like Venmo, but the youngest is a calculator.
 
 ## How to Get Started ##
-  > Describe how easy it is to get started.
+  > Get started by taking a picture of your bill and adding friends to the list of payers. 
 
 ## Customer Quote ##
-  > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+  > Finally! I can call out that one underpaying friend when it's time to split the bill!!!!
 
 ## Closing and Call to Action ##
-  > Wrap it up and give pointers where the reader should go next.
+  > Stop hating your friends for underpaying you after bonding with them at dinner.
