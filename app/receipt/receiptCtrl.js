@@ -34,11 +34,13 @@ billSplitter.controller('receiptController', function ($scope, Users) {
     var count = 0;
     var splitAmong = [];
     
-    console.log($scope.items);
+    console.log($scope.assignedDish);
+    
     for(var i = 0; i < $scope.splitters.length; i++){
       if($scope.splitters[i].selected === true){
         count++;
         splitAmong.push(i);
+        console.log($scope.splitters[i].name);
       }
     }
 
@@ -46,7 +48,6 @@ billSplitter.controller('receiptController', function ($scope, Users) {
       dish: $scope.assignedDish.description,
       price: parseInt($scope.assignedDish.price * parseInt($scope.assignedDish.quantity))/count
     };
-
 
     for(var i = 0; i < splitAmong.length; i++){
       var index = splitAmong[i];
