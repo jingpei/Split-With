@@ -6,7 +6,9 @@ billSplitter.controller('splittersController', function ($scope, $location, User
     var user = {};
     user['name'] = name;
     user['purchased'] = [];
-    user['selected'] = false;
+    user['selected'] = "";
+    user['subtotal'] = 0;
+    user['total'] = 0;
     user['tip'] = 0;
     user['tax'] = 0;
     $scope.users.splitters.push(user);

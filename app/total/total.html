@@ -1,0 +1,19 @@
+<h1>Totals</h1>
+<table>
+  <thead>
+    <tr>
+      <td>Person</td>
+      <td>Subtotal</td>
+      <td>Tax</td>
+      <td>Tip</td>
+      <td>Total</td>
+    <tr>
+  </thead>
+  <tr ng-repeat="person in splitters" ng-click="routeToPerson()">
+    <td>{{ person.name }}</td>
+    <td>{{ person.subtotal }}</td>
+    <td>{{ person.tax }}</td>
+    <td>{{ person.tip }}</td>
+    <td>{{ person.total }}</td>
+  </tr>
+</table>
