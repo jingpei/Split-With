@@ -1,6 +1,7 @@
 billSplitter.controller('receiptController', function ($scope, Users) {
   $scope.items = [];
-  console.log(Users);
+  $scope.splitters = Users.splitters;
+  $scope.toggle = 1;
 
   $scope.addItem = function (item) {
     $scope.items.push(item);
@@ -8,7 +9,10 @@ billSplitter.controller('receiptController', function ($scope, Users) {
   }
 
   $scope.clickChecker = function () {
-    console.dir(this)
+    $scope.toggle++;
+  }
+
+  $scope.assignPerson = function() {
   }
   
 });

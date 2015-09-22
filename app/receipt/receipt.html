@@ -19,6 +19,6 @@
   </div>
 </div>
 
-<div class="selectSplitters">
-  <div ng-repeat="person in splitters">{{ person.name }}</div>
+<div class="selectSplitters" ng-if="toggle % 2 === 0">
+  <div ng-repeat="person in splitters" ng-click="assignPerson()">{{ person.name }}</div>
 </div>
