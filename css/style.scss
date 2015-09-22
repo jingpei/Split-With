@@ -1,10 +1,18 @@
+@import url(https://fonts.googleapis.com/css?family=Lato);
+$font-family: 'Lato', sans-serif;
+
 @mixin inputGlobalStyle {
   height: 30px;
   border-radius: 5px;
   border: 1px solid lightgrey;
   padding: 5px;
-  font-size: 16px;
+  font-family: $font-family;
+  font-size: 15px;
   margin: 5px 2px;
+}
+
+body {
+  font-family: $font-family;
 }
 
 img {
@@ -38,8 +46,13 @@ input {
   @include inputGlobalStyle;
 }
 
+form {
+  margin-bottom: 100px;
+}
+
 button {
   @include inputGlobalStyle;
+  display: block;
 }
 
 div {
@@ -66,4 +79,9 @@ div {
 #addedUsers:hover, #addedUsers:active, #addedUsers:link, #addedUsers:visited {
   text-decoration: none;
   color: black;
+}
+
+#tip, #tax, #price {
+  display: block;
+  width: 60px;
 }

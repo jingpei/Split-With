@@ -1,13 +1,23 @@
 <h1>Insert Receipt Items</h1>
-<form>
-  <input id="tip" placeholder="tip % (e.g. 15, 18, 20)" ng-model="bill.tip"></input>
-  <input id="tax" placeholder="tax (e.g. 6.50)" ng-model="bill.tax"></input>
+<form validate>
+  <input id="tip" type="number" placeholder="tip %" ng-model="bill.tip">
+    (e.g. 15, 18, 20)
+  </input>
+  <input id="tax" type="number" placeholder="tax" ng-model="bill.tax">
+    (e.g. 6.50)
+  </input>
   <button ng-click="calculateTipTax(bill)">Submit</button>
 </form>
-<form>
-  <input id="quantity" placeholder="qty" ng-model="item.quantity"> x</input>
+
+<div ng-hide="noTaxTip === true">
+  <p>Total Tax: {{ taxTotal }}</p>
+  <p>Tip: {{ tipPercent }}%</p>
+</div>
+
+<form validate>
+  <input id="quantity" type="number" placeholder="qty" ng-model="item.quantity"> x</input>
   <input id="description" placeholder="description" ng-model="item.description"></input>
-  <input id="price" placeholder="price" ng-model="item.price"></input>
+  <input id="price" type="number" placeholder="price" ng-model="item.price"></input>
   <button ng-click="addItem(item)">Submit</button>
 </form>
 
@@ -20,8 +30,11 @@
 </div>
 
 <div class="selectSplitters" ng-if="toggle % 2 === 0">
-  <div ng-repeat="person in splitters" ng-click="addPerson()" ng-class="person.selected">{{ person.name }}</div>
+  <div ng-repeat="person in splitters" ng-click="addPerson()" ng-class="person.selected">
+    {{ person.name }}
+  </div>
   <button ng-click="assignPerson()">Split</button>
+  
 </div>
 
 <button ng-click="viewTotals()">View Totals</button>

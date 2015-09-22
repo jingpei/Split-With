@@ -4,6 +4,7 @@ billSplitter.controller('receiptController', function ($scope, $location, Users,
   $scope.addedUsers = [];
   $scope.splitters = Users.splitters;
   $scope.assignedDish = {};
+  $scope.noTaxTip = true;
   $scope.toggle = 1;
   $scope.taxTotal = 0;
   $scope.tipPercent = 0;
@@ -20,6 +21,7 @@ billSplitter.controller('receiptController', function ($scope, $location, Users,
   $scope.calculateTipTax = function (bill) {
     $scope.taxTotal = bill.tax;
     $scope.tipPercent = bill.tip;
+    $scope.noTaxTip = false;
     $scope.bill = {};
   }
 
