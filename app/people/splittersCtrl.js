@@ -5,6 +5,10 @@ billSplitter.controller('splittersController', function ($scope, $location, User
   $scope.addUser = function(name){
     var user = {};
     user['name'] = name;
+    user['purchased'] = [];
+    user['selected'] = false;
+    user['tip'] = 0;
+    user['tax'] = 0;
     $scope.users.splitters.push(user);
     $scope.name = "";
   }
