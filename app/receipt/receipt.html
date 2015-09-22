@@ -12,7 +12,7 @@
 </form>
 
 <div class="container">
-  <div class="item" ng-repeat="item in items | orderBy: 'item.price'" ng-click="clickChecker()">
+  <div class="item" ng-repeat="item in items | orderBy: 'item.price'" ng-click="clickChecker()" ng-class="item.selected">
     <div class="quantity">{{ item.quantity }}</div>
     <div class="description">{{ item.description }}</div>
     <div class="price">{{ item.price }}</div>

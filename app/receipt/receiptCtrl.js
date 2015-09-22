@@ -13,12 +13,13 @@ billSplitter.controller('receiptController', function ($scope, $location, Users,
   $scope.addItem = function (item) {
     $scope.items.push(item);
     $scope.billTotal += parseFloat(item.price);
+    $scope.item.selected = "";
     $scope.item = {};
   }
 
   $scope.calculateTipTax = function (bill) {
-    $scope.taxTotal = bill.tip;
-    $scope.tipPercent = bill.tax;
+    $scope.taxTotal = bill.tax;
+    $scope.tipPercent = bill.tip;
     $scope.bill = {};
   }
 
@@ -26,6 +27,7 @@ billSplitter.controller('receiptController', function ($scope, $location, Users,
     $scope.toggle++;
     $scope.assignedDish = $scope.items[this.$index];
     $scope.assignedDish.itemIndex = this.$index;
+    $scope.items[this.$index].selected = "selected";
   }
 
   $scope.addPerson = function () {
@@ -72,11 +74,10 @@ billSplitter.controller('receiptController', function ($scope, $location, Users,
     //calculate tax percent
     var taxPercent = $scope.taxTotal / $scope.billTotal;
     var tipPercent = $scope.tipPercent / 100;
-    console.log(taxPercent);
     for(var i = 0; i < $scope.splitters.length; i++){
-      $scope.splitters[i].tax = $scope.splitters[i].subtotal * taxPercent;
-      $scope.splitters[i].tip = $scope.splitters[i].subtotal * tip;
-      $scope.splitters[i].total = $scope.splitters[i].subtotal + $scope.splitters[i].tax + $scope.splitters[i].tip;
+      $scope.splitters[i].tax = ($scope.splitters[i].subtotal * taxPercent).toFixed(2);
+      $scope.splitters[i].tip = ($scope.splitters[i].subtotal * tipPercent).toFixed(2);
+      $scope.splitters[i].total = parseFloat($scope.splitters[i].subtotal) + parseFloat($scope.splitters[i].tax) + parseFloat($scope.splitters[i].tip);
     }
     $location.path('/total');
   }
