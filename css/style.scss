@@ -1,5 +1,10 @@
 @import url(https://fonts.googleapis.com/css?family=Lato);
+@import url(https://fonts.googleapis.com/css?family=Gloria+Hallelujah);
 $font-family: 'Lato', sans-serif;
+$header: 'Gloria Hallelujah', cursive;
+$lime: #DDE54A;
+$deepBlue: #153B64;
+$fuschia: #F405F0;
 
 @mixin inputGlobalStyle {
   height: 30px;
@@ -13,6 +18,128 @@ $font-family: 'Lato', sans-serif;
 
 body {
   font-family: $font-family;
+}
+
+.main {
+  
+  @media screen and (min-width: 400px){
+    width: 600px;
+    margin: 50px auto 0 auto;
+    border: 2px solid $lime;
+    border-radius: 10px;
+  }
+
+  width: 300px;
+  padding: 0 15 20 15;
+  position: relative;
+
+  h1 {
+    text-align: center;
+    font-family: $header;
+    line-height: 90%;
+  }
+
+  .container {
+    width: 300px;
+    margin: 30px auto;
+    text-align: center;
+  }
+
+  .tipContainer {
+    width: 300px;
+    margin: 0 auto;
+  }
+
+  .addPerson {
+    width: 300px;
+    margin: 0 auto;
+  }
+
+  .tipTaxForm {
+    width: 100px;
+    margin: 0 auto;
+    margin-left: 150px;
+    display: inline;
+    float: left;
+  }
+
+  .addContainer {
+    width: 500px;
+    margin: 0 auto;
+  }
+
+  .addItem {
+    clear:both;
+    padding-top: 50px;
+  }
+
+  .showTip {
+    float: right;
+    margin-right: 200px;
+    display: inline;
+    font-size: 16px;
+  }
+
+  .lowerLabel {
+    display: inline;
+    font-size: 14px; 
+
+    span {
+      display: block;
+      font-size: 10px;
+      color: lightgrey;
+    }
+
+    button {
+      display: inline;
+      margin: 0 0;
+    }
+
+  }
+
+  input {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  input:focus {
+    background-color: $deepBlue;
+    color: white;
+  }
+
+  input::-webkit-input-placeholder:focus {
+    color: white;
+  }
+
+  button {
+    background-color: $lime;
+    border: 1px solid $lime;
+    width: 70px;
+    margin: 15px auto 0 auto;
+  }
+
+  button:hover {
+    background-color: $deepBlue;
+    color: white;
+  }
+
+  #addedUsers, #viewTotals {
+    width: 100px;
+    position: absolute;
+    float: right;
+    bottom: 20px;
+    right: 20px;
+  }
+
+  table {
+    margin: 0 auto;
+  }
+  thead{
+    font-weight: bold;
+  }
+  td {
+    width: 100px;
+  }
 }
 
 img {
@@ -32,7 +159,7 @@ input {
 }
 
 #quantity, #tip, #tax {
-  width: 50px;
+  width: 70px;
   @include inputGlobalStyle;
 }
 
@@ -42,12 +169,12 @@ input {
 }
 
 #price {
-  width: 50px;
+  width: 70px;
   @include inputGlobalStyle;
 }
 
 form {
-  margin-bottom: 100px;
+  margin-bottom: 20px;
 }
 
 button {
@@ -64,24 +191,33 @@ div {
 }
 
 .selected {
-  color: red;
+  background-color: $fuschia;
+  color: $lime;
 }
 
-#addedUsers {
-  display: block;
-  background-color: lightgrey;
-  width: 70px;
-  text-align: center;
-  text-decoration: none;
-  @include inputGlobalStyle;
+div:hover {
+  cursor: pointer;
 }
 
-#addedUsers:hover, #addedUsers:active, #addedUsers:link, #addedUsers:visited {
-  text-decoration: none;
-  color: black;
+.selectSplitters {
+  width: 300px;
+  height: 200px;
+  z-index: 2;
+  border-radius: 10px;
+  background-color: white;
+  position: fixed;
+  top: 150px;
+  left: 450px;
+  padding: 40px;
+  border: 2px solid $lime;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
-#tip, #tax, #price {
-  display: block;
-  width: 60px;
-}
+// #tip, #tax {
+//   display: block;
+// }
+
+// #tip, #tax, #price {
+//   width: 60px;
+// }

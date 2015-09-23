@@ -1,23 +1,25 @@
-<h1>Total for: {{ name }}</h1>
-<table>
-  <tr ng-repeat="item in person.purchased">
-    <td>{{ item.dish }}</td>
-    <td>{{ item.price }}</td>
-  </tr>
-  <tr>
-    <td>Subtotal</td>
-    <td>{{ person.subtotal }}</td>
-  </tr>
-  <tr>
-    <td>Tax</td>
-    <td>{{ person.tax }}</td>
-  </tr>
-  <tr>
-    <td>Tip</td>
-    <td>{{ person.tip }}</td>
-  </tr>
-  <tr>
-    <td>Total</td>
-    <td>{{ person.total }}</td>
-  </tr>
-</table>
+<div class="main">
+  <h1>Total for: {{ name }}</h1>
+  <table>
+    <tr ng-repeat="item in person.purchased">
+      <td>{{ item.dish }}</td>
+      <td>${{ item.price }}</td>
+    </tr>
+    <tr>
+      <td>Subtotal</td>
+      <td>${{ person.subtotal }}</td>
+    </tr>
+    <tr>
+      <td>Tax</td>
+      <td>${{ person.tax }}</td>
+    </tr>
+    <tr>
+      <td>Tip</td>
+      <td>${{ person.tip }}</td>
+    </tr>
+    <tr>
+      <td>Total</td>
+      <td>${{ person.total }}</td>
+    </tr>
+  </table>
+</div>

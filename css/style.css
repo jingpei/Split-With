@@ -1,6 +1,87 @@
 @import url(https://fonts.googleapis.com/css?family=Lato);
+@import url(https://fonts.googleapis.com/css?family=Gloria+Hallelujah);
 body {
   font-family: "Lato", sans-serif; }
+
+.main {
+  width: 300px;
+  padding: 0 15 20 15;
+  position: relative; }
+  @media screen and (min-width: 400px) {
+    .main {
+      width: 600px;
+      margin: 50px auto 0 auto;
+      border: 2px solid #DDE54A;
+      border-radius: 10px; } }
+  .main h1 {
+    text-align: center;
+    font-family: "Gloria Hallelujah", cursive;
+    line-height: 90%; }
+  .main .container {
+    width: 300px;
+    margin: 30px auto;
+    text-align: center; }
+  .main .tipContainer {
+    width: 300px;
+    margin: 0 auto; }
+  .main .addPerson {
+    width: 300px;
+    margin: 0 auto; }
+  .main .tipTaxForm {
+    width: 100px;
+    margin: 0 auto;
+    margin-left: 150px;
+    display: inline;
+    float: left; }
+  .main .addContainer {
+    width: 500px;
+    margin: 0 auto; }
+  .main .addItem {
+    clear: both;
+    padding-top: 50px; }
+  .main .showTip {
+    float: right;
+    margin-right: 200px;
+    display: inline;
+    font-size: 16px; }
+  .main .lowerLabel {
+    display: inline;
+    font-size: 14px; }
+    .main .lowerLabel span {
+      display: block;
+      font-size: 10px;
+      color: lightgrey; }
+    .main .lowerLabel button {
+      display: inline;
+      margin: 0 0; }
+  .main input {
+    width: 100%;
+    margin: 0 auto; }
+  .main input:focus {
+    background-color: #153B64;
+    color: white; }
+  .main input::-webkit-input-placeholder:focus {
+    color: white; }
+  .main button {
+    background-color: #DDE54A;
+    border: 1px solid #DDE54A;
+    width: 70px;
+    margin: 15px auto 0 auto; }
+  .main button:hover {
+    background-color: #153B64;
+    color: white; }
+  .main #addedUsers, .main #viewTotals {
+    width: 100px;
+    position: absolute;
+    float: right;
+    bottom: 20px;
+    right: 20px; }
+  .main table {
+    margin: 0 auto; }
+  .main thead {
+    font-weight: bold; }
+  .main td {
+    width: 100px; }
 
 img {
   display: none; }
@@ -21,7 +102,7 @@ input {
   display: inline-block; }
 
 #quantity, #tip, #tax {
-  width: 50px;
+  width: 70px;
   height: 30px;
   border-radius: 5px;
   border: 1px solid lightgrey;
@@ -41,7 +122,7 @@ input {
   margin: 5px 2px; }
 
 #price {
-  width: 50px;
+  width: 70px;
   height: 30px;
   border-radius: 5px;
   border: 1px solid lightgrey;
@@ -51,7 +132,7 @@ input {
   margin: 5px 2px; }
 
 form {
-  margin-bottom: 100px; }
+  margin-bottom: 20px; }
 
 button {
   height: 30px;
@@ -70,28 +151,24 @@ div {
   margin: 30px auto; }
 
 .selected {
-  color: red; }
+  background-color: #F405F0;
+  color: #DDE54A; }
 
-#addedUsers {
-  display: block;
-  background-color: lightgrey;
-  width: 70px;
-  text-align: center;
-  text-decoration: none;
-  height: 30px;
-  border-radius: 5px;
-  border: 1px solid lightgrey;
-  padding: 5px;
-  font-family: "Lato", sans-serif;
-  font-size: 15px;
-  margin: 5px 2px; }
+div:hover {
+  cursor: pointer; }
 
-#addedUsers:hover, #addedUsers:active, #addedUsers:link, #addedUsers:visited {
-  text-decoration: none;
-  color: black; }
-
-#tip, #tax, #price {
-  display: block;
-  width: 60px; }
+.selectSplitters {
+  width: 300px;
+  height: 200px;
+  z-index: 2;
+  border-radius: 10px;
+  background-color: white;
+  position: fixed;
+  top: 150px;
+  left: 450px;
+  padding: 40px;
+  border: 2px solid #DDE54A;
+  overflow-y: scroll;
+  overflow-x: hidden; }
 
 /*# sourceMappingURL=style.css.map */

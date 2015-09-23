@@ -79,7 +79,7 @@ billSplitter.controller('receiptController', function ($scope, $location, Users,
     for(var i = 0; i < $scope.splitters.length; i++){
       $scope.splitters[i].tax = ($scope.splitters[i].subtotal * taxPercent).toFixed(2);
       $scope.splitters[i].tip = ($scope.splitters[i].subtotal * tipPercent).toFixed(2);
-      $scope.splitters[i].total = parseFloat($scope.splitters[i].subtotal) + parseFloat($scope.splitters[i].tax) + parseFloat($scope.splitters[i].tip);
+      $scope.splitters[i].total = (parseFloat($scope.splitters[i].subtotal) + parseFloat($scope.splitters[i].tax) + parseFloat($scope.splitters[i].tip)).toFixed(2);
     }
     $location.path('/total');
   }

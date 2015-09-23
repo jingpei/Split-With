@@ -1,40 +1,48 @@
-<h1>Insert Receipt Items</h1>
-<form validate>
-  <input id="tip" type="number" placeholder="tip %" ng-model="bill.tip">
-    (e.g. 15, 18, 20)
-  </input>
-  <input id="tax" type="number" placeholder="tax" ng-model="bill.tax">
-    (e.g. 6.50)
-  </input>
-  <button ng-click="calculateTipTax(bill)">Submit</button>
-</form>
+<div class="main">
+  <h1>receipt items:</h1>
+  <div id="tipContainer">
+    <form class="tipTaxForm" validate>
+      <div class="lowerLabel">
+        <input id="tip" type="number" placeholder="tip %" ng-model="bill.tip"></input>
+        <span>(e.g. 15, 18, 20)</span>
+      </div>
+      <div class="lowerLabel">
+        <input id="tax" type="number" placeholder="tax" ng-model="bill.tax"></input>
+        <span>(e.g. 6.50)</span>
+      </div>
+      <div class="lowerLabel"><button id="addTipTax" ng-click="calculateTipTax(bill)">Add</button></div>
+    </form>
 
-<div ng-hide="noTaxTip === true">
-  <p>Total Tax: {{ taxTotal }}</p>
-  <p>Tip: {{ tipPercent }}%</p>
-</div>
-
-<form validate>
-  <input id="quantity" type="number" placeholder="qty" ng-model="item.quantity"> x</input>
-  <input id="description" placeholder="description" ng-model="item.description"></input>
-  <input id="price" type="number" placeholder="price" ng-model="item.price"></input>
-  <button ng-click="addItem(item)">Submit</button>
-</form>
-
-<div class="container">
-  <div class="item" ng-repeat="item in items | orderBy: 'item.price'" ng-click="clickChecker()" ng-class="item.selected">
-    <div class="quantity">{{ item.quantity }}</div>
-    <div class="description">{{ item.description }}</div>
-    <div class="price">{{ item.price }}</div>
+    <div class="showTip" ng-hide="noTaxTip === true">
+      <p>Total Tax: ${{ taxTotal }}</p>
+      <p>Tip: {{ tipPercent }}%</p>
+    </div>
   </div>
-</div>
 
-<div class="selectSplitters" ng-if="toggle % 2 === 0">
-  <div ng-repeat="person in splitters" ng-click="addPerson()" ng-class="person.selected">
-    {{ person.name }}
+  <form class="addItem" validate>
+    <div class="addContainer">
+      <input id="quantity" type="number" placeholder="qty" ng-model="item.quantity"> x</input>
+      <input id="description" placeholder="description" ng-model="item.description"></input>
+      <input id="price" type="number" placeholder="price" ng-model="item.price"></input>
+    </div>
+    <button ng-click="addItem(item)">Submit</button>
+  </form>
+
+  <div class="container">
+    <div class="item" ng-repeat="item in items | orderBy: 'item.price'" ng-click="clickChecker()" ng-class="item.selected">
+      <div class="quantity">{{ item.quantity }} x</div>
+      <div class="description">{{ item.description }}</div>
+      <div class="price">${{ item.price }}</div>
+    </div>
   </div>
-  <button ng-click="assignPerson()">Split</button>
-  
-</div>
 
-<button ng-click="viewTotals()">View Totals</button>
+  <div class="selectSplitters" ng-if="toggle % 2 === 0">
+    <div ng-repeat="person in splitters" ng-click="addPerson()" ng-class="person.selected">
+      {{ person.name }}
+    </div>
+    <button ng-click="assignPerson()">Split</button>
+    
+  </div>
+
+  <button id="viewTotals" ng-click="viewTotals()">View Totals</button>
+</div>
