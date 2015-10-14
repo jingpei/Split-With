@@ -1,48 +1,89 @@
 @import url(https://fonts.googleapis.com/css?family=Lato);
 @import url(https://fonts.googleapis.com/css?family=Gloria+Hallelujah);
+@import url(https://fonts.googleapis.com/css?family=Quicksand:400,300);
+
 $font-family: 'Lato', sans-serif;
 $header: 'Gloria Hallelujah', cursive;
+$navbar: 'Quicksand', sans-serif;
 $lime: #DDE54A;
 $deepBlue: #153B64;
 $fuschia: #F405F0;
+$white: #FFFFFF;
 
 @mixin inputGlobalStyle {
   height: 30px;
   border-radius: 5px;
   border: 1px solid lightgrey;
   padding: 5px;
-  font-family: $font-family;
-  font-size: 15px;
+  font-family: $navbar;
+  font-weight: 300;
+  font-size: 12px;
   margin: 5px 2px;
+}
+
+html {
+  padding: 0px 0px;
+  margin: 0px 0px;
 }
 
 body {
   font-family: $font-family;
+  padding: 0px 0px;
+  margin: 0px 0px;
+  overflow-y: hidden;
+}
+
+header {
+  margin: 0 0;
+  padding: 0 0;
+  background-color: $deepBlue;
+  height: 40px;
+  font-family: $navbar;
+  font-weight: 300;
+  font-size: 1.7em;
+  vertical-align: center;
+  text-align: center;
+  color: $lime;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 10;
 }
 
 .main {
   
-  @media screen and (min-width: 400px){
-    width: 600px;
-    margin: 50px auto 0 auto;
-    border: 2px solid $lime;
-    border-radius: 10px;
-  }
+  // @media screen and (min-width: 400px){
+  //   width: 600px;
+  //   margin: 50px auto 0 auto;
+  //   // border: 2px solid $lime;
+  //   border-radius: 10px;
+  // }
 
   width: 300px;
-  padding: 0 15 20 15;
+  height: 60%;
+  margin: 50px auto;
+  margin-top: 90px;
+  margin-bottom: 30px;
   position: relative;
 
-  h1 {
+
+  .heading {
     text-align: center;
-    font-family: $header;
+    font-family: $navbar;
+    font-weight: 300;
+    font-size: .8em;
     line-height: 90%;
   }
 
   .container {
     width: 300px;
-    margin: 30px auto;
-    text-align: center;
+    margin: 10px auto;
+    text-align: right;
+    font-family: $navbar;
+    font-weight: 300;
+    height: 70%;
+    overflow-y: scroll;
   }
 
   .tipContainer {
@@ -97,9 +138,15 @@ body {
 
   }
 
+  #addFriend, #addedUsers {
+    width: 90px;
+    margin: 0 0;
+    padding: 0 0;
+    @include inputGlobalStyle;
+  }
+
   input {
     width: 100%;
-    margin: 0 auto;
   }
 
   input:focus {
@@ -111,25 +158,17 @@ body {
     color: white;
   }
 
-  button {
-    background-color: $lime;
-    border: 1px solid $lime;
-    width: 70px;
-    margin: 15px auto 0 auto;
-  }
 
   button:hover {
     background-color: $deepBlue;
     color: white;
   }
 
-  #addedUsers, #viewTotals {
-    width: 100px;
-    position: absolute;
-    float: right;
-    bottom: 20px;
-    right: 20px;
-  }
+  // #addFriend, #addedUsers, #viewTotals {
+  //   width: 100px;
+  //   display: inline-block;
+  // }
+
 
   table {
     margin: 0 auto;
@@ -142,9 +181,16 @@ body {
   }
 }
 
-img {
-  display: none;
+button {
+  background-color: $lime;
+  border: 1px solid $lime;
+  width: 70px;
+  margin: 15px auto 0 auto;
 }
+
+// img {
+//   display: none;
+// }
 
 input:focus, button:focus {
   outline: none;
@@ -154,65 +200,67 @@ input {
   @include inputGlobalStyle;
 }
 
-.item > div {
-  display: inline-block;
-}
+// .item > div {
+//   display: inline-block;
+// }
 
-#quantity, #tip, #tax {
-  width: 70px;
-  @include inputGlobalStyle;
-}
+// #quantity, #tip, #tax {
+//   width: 70px;
+//   @include inputGlobalStyle;
+// }
 
-#description {
-  width: 300px;
-  @include inputGlobalStyle;
-}
+// #description {
+//   width: 300px;
+//   @include inputGlobalStyle;
+// }
 
-#price {
-  width: 70px;
-  @include inputGlobalStyle;
-}
+// #price {
+//   width: 70px;
+//   @include inputGlobalStyle;
+// }
 
-form {
-  margin-bottom: 20px;
-}
+// form {
+//   margin-bottom: 20px;
+// }
 
-button {
-  @include inputGlobalStyle;
-  display: block;
-}
+// button {
+//   @include inputGlobalStyle;
+// }
 
-div {
-  font-size: 26px;
-}
+// div {
+//   font-size: 26px;
+// }
 
-.container {
-  margin: 30px auto;
-}
+// .container {
+//   margin: 10px auto;
+//   text-align: right;
+//   font-family: $navbar;
+//   font-weight: 300;
+// }
 
-.selected {
-  background-color: $fuschia;
-  color: $lime;
-}
+// .selected {
+//   background-color: $fuschia;
+//   color: $lime;
+// }
 
-div:hover {
-  cursor: pointer;
-}
+// div:hover {
+//   cursor: pointer;
+// }
 
-.selectSplitters {
-  width: 300px;
-  height: 200px;
-  z-index: 2;
-  border-radius: 10px;
-  background-color: white;
-  position: fixed;
-  top: 150px;
-  left: 450px;
-  padding: 40px;
-  border: 2px solid $lime;
-  overflow-y: scroll;
-  overflow-x: hidden;
-}
+// .selectSplitters {
+//   width: 300px;
+//   height: 200px;
+//   z-index: 2;
+//   border-radius: 10px;
+//   background-color: white;
+//   position: fixed;
+//   top: 150px;
+//   left: 450px;
+//   padding: 40px;
+//   border: 1px solid $lime;
+//   overflow-y: scroll;
+//   overflow-x: hidden;
+// }
 
 // #tip, #tax {
 //   display: block;

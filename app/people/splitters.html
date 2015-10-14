@@ -1,8 +1,9 @@
 <div class="main">
-  <h1>split with...</h1>
+  <p class="heading">Who did you eat with?</p>
   <form class="addPerson">
     <input placeholder="name" ng-model="name"></input>
-    <button ng-click="addUser(name)">Submit</button>
+    <button id="addFriend" ng-click="addUser(name)">Add Friend</button>
+    <button id="addedUsers" ng-click="shareData()">Add Bill</button>
   </form>
 
   <div class="container">
@@ -11,5 +12,4 @@
     </div>
   </div>
 
-  <button id="addedUsers" ng-click="shareData()">Add Receipt</a>
 </main>
