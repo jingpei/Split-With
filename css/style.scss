@@ -11,13 +11,13 @@ $fuschia: #F405F0;
 $white: #FFFFFF;
 
 @mixin inputGlobalStyle {
-  height: 30px;
+  // height: 40px;
   border-radius: 5px;
   border: 1px solid lightgrey;
   padding: 5px;
   font-family: $navbar;
   font-weight: 300;
-  font-size: 12px;
+  font-size: 18px;
   margin: 5px 2px;
 }
 
@@ -33,15 +33,14 @@ body {
   overflow-y: hidden;
 }
 
-header {
+header > a {
   margin: 0 0;
-  padding: 0 0;
+  padding: 10 0 20 0;
   background-color: $deepBlue;
-  height: 40px;
+  height: 50px;
   font-family: $navbar;
   font-weight: 300;
-  font-size: 1.7em;
-  vertical-align: center;
+  font-size: 2.8em;
   text-align: center;
   color: $lime;
   position: fixed;
@@ -49,6 +48,19 @@ header {
   top: 0;
   width: 100%;
   z-index: 10;
+}
+
+a {
+  text-decoration: none;
+}
+
+input:focus, button:focus {
+  outline: none;
+}
+
+input {
+  height: 40px;
+  @include inputGlobalStyle;
 }
 
 .main {
@@ -60,10 +72,10 @@ header {
   //   border-radius: 10px;
   // }
 
-  width: 300px;
+  width: 400px;
   height: 60%;
   margin: 50px auto;
-  margin-top: 90px;
+  margin-top: 120px;
   margin-bottom: 30px;
   position: relative;
 
@@ -71,9 +83,22 @@ header {
   .heading {
     text-align: center;
     font-family: $navbar;
-    font-weight: 300;
-    font-size: .8em;
+    font-weight: 400;
+    font-size: 1.5em;
     line-height: 90%;
+  }
+
+  input {
+    width: 100%;
+  }
+
+  input:focus {
+    background-color: $deepBlue;
+    color: white;
+  }
+
+  input::-webkit-input-placeholder:focus {
+    color: white;
   }
 
   .container {
@@ -82,6 +107,7 @@ header {
     text-align: right;
     font-family: $navbar;
     font-weight: 300;
+    font-size: 1.5em;
     height: 70%;
     overflow-y: scroll;
   }
@@ -97,11 +123,14 @@ header {
   }
 
   .tipTaxForm {
-    width: 100px;
-    margin: 0 auto;
-    margin-left: 150px;
-    display: inline;
+    // width: 100px;
+    // margin: 0 auto;
+    // // margin-left: 150px;
+    // // display: inline;
+    width: 180px;
     float: left;
+    margin-left: 20px;
+    margin-bottom: 20px;
   }
 
   .addContainer {
@@ -111,51 +140,52 @@ header {
 
   .addItem {
     clear:both;
-    padding-top: 50px;
   }
 
   .showTip {
     float: right;
-    margin-right: 200px;
-    display: inline;
-    font-size: 16px;
+    margin-right: 20px;
+    font-family: $navbar;
+    font-size: 1.2em;
   }
 
   .lowerLabel {
     display: inline;
-    font-size: 14px; 
-
-    span {
-      display: block;
-      font-size: 10px;
-      color: lightgrey;
-    }
-
-    button {
-      display: inline;
-      margin: 0 0;
-    }
-
+    float: left;
   }
 
-  #addFriend, #addedUsers {
-    width: 90px;
-    margin: 0 0;
-    padding: 0 0;
+  // .lowerLabel {
+  //   display: inline;
+  //   width: 50px;
+  //   font-size: 14px; 
+    
+  //   input {
+  //     width: 100%;
+  //   }
+
+  //   button {
+  //     display: inline;
+  //     margin: 0 0;
+  //   }
+
+  // }
+  span {
+    display: block;
+    font-family: $navbar;
+    font-size: 10px;
+    color: lightgrey;
+  }
+
+  // #addFriend, #addedUsers {
+  button {
     @include inputGlobalStyle;
-  }
-
-  input {
-    width: 100%;
-  }
-
-  input:focus {
-    background-color: $deepBlue;
-    color: white;
-  }
-
-  input::-webkit-input-placeholder:focus {
-    color: white;
+    width: 120px;
+    height: 35px;
+    display: inline-block;
+    align: center;
+    background-color: $lime;
+    border: 1px solid $lime;
+    margin: 15px auto 0 auto;
   }
 
 
@@ -172,52 +202,49 @@ header {
 
   table {
     margin: 0 auto;
+    font-family: $navbar;
   }
   thead{
-    font-weight: bold;
+    font-weight: 400;
   }
   td {
     width: 100px;
   }
+  tr:hover {
+    color: $fuschia;
+    font-weight: 400;
+  }
+  tr:last-child:hover, thead > tr:hover {
+    color: black;
+  }
 }
 
-button {
-  background-color: $lime;
-  border: 1px solid $lime;
-  width: 70px;
-  margin: 15px auto 0 auto;
+img {
+  display: none;
 }
 
-// img {
-//   display: none;
-// }
-
-input:focus, button:focus {
-  outline: none;
+.item > div {
+  display: inline-block;
 }
 
-input {
+#tip, #tax {
+  width: 80px;
   @include inputGlobalStyle;
 }
 
-// .item > div {
-//   display: inline-block;
-// }
+#quantity {
+  width: 55px;
+}
 
-// #quantity, #tip, #tax {
-//   width: 70px;
-//   @include inputGlobalStyle;
-// }
+#description {
+  width: 245px;
+  @include inputGlobalStyle;
+}
 
-// #description {
-//   width: 300px;
-//   @include inputGlobalStyle;
-// }
-
-// #price {
-//   width: 70px;
-//   @include inputGlobalStyle;
-// }
+#price {
+  width: 70px;
+  @include inputGlobalStyle;
+}
 
 // form {
 //   margin-bottom: 20px;
@@ -238,29 +265,32 @@ input {
 //   font-weight: 300;
 // }
 
-// .selected {
-//   background-color: $fuschia;
-//   color: $lime;
-// }
+.selected {
+  // background-color: $fuschia;
+  color: $fuschia;
+  font-weight: 400;
+}
 
-// div:hover {
-//   cursor: pointer;
-// }
+div:hover {
+  cursor: pointer;
+}
 
-// .selectSplitters {
-//   width: 300px;
-//   height: 200px;
-//   z-index: 2;
-//   border-radius: 10px;
-//   background-color: white;
-//   position: fixed;
-//   top: 150px;
-//   left: 450px;
-//   padding: 40px;
-//   border: 1px solid $lime;
-//   overflow-y: scroll;
-//   overflow-x: hidden;
-// }
+.selectSplitters {
+  width: 300px;
+  height: 200px;
+  margin: 0px auto;
+  z-index: 2;
+  border-radius: 10px;
+  background-color: white;
+  position: fixed;
+  top: 20%;
+  padding: 40px;
+  border: 1px solid $lime;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  font-family: $navbar;
+  font-size: 1.2em;
+}
 
 // #tip, #tax {
 //   display: block;

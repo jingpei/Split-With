@@ -2,8 +2,10 @@
   <p class="heading">Who did you eat with?</p>
   <form class="addPerson">
     <input placeholder="name" ng-model="name"></input>
-    <button id="addFriend" ng-click="addUser(name)">Add Friend</button>
-    <button id="addedUsers" ng-click="shareData()">Add Bill</button>
+    <div class="buttonWrapper">
+      <button id="addFriend" ng-click="addUser(name)">Add Friend</button>
+      <button id="addedUsers" ng-click="shareData()">Add Bill</button>
+    </div>
   </form>
 
   <div class="container">
