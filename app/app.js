@@ -10,6 +10,10 @@ billSplitter.config(function ($routeProvider) {
       templateUrl: 'app/receipt/receipt.html',
       controller: 'receiptController'
     })
+    .when('/bill', {
+      templateUrl: 'app/bill/bill.html',
+      controller: 'receiptController'
+    })
     .when('/total', {
       templateUrl: 'app/total/total.html',
       controller: 'totalController'
@@ -26,6 +30,7 @@ billSplitter.factory('Users', function () {
 
 billSplitter.factory('Items', function() {
   return {
-    items: []
+    items: [],
+    billTotal: 0
   };
 })

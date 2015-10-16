@@ -1,6 +1,7 @@
 billSplitter.controller('receiptController', function ($scope, $location, Users, Items) {
   $scope.items = Items.items;
-  $scope.billTotal = 0;
+  $scope.billTotal = Items.billTotal;
+  console.log('Bill total: ' + $scope.billTotal);
   $scope.addedUsers = [];
   $scope.splitters = Users.splitters;
   $scope.assignedDish = {};
@@ -13,7 +14,7 @@ billSplitter.controller('receiptController', function ($scope, $location, Users,
 
   $scope.addItem = function (item) {
     $scope.items.push(item);
-    $scope.billTotal += parseFloat(item.price);
+    Items.billTotal += parseFloat(item.price);
     $scope.item.selected = "";
     $scope.item = {};
   }
@@ -45,8 +46,10 @@ billSplitter.controller('receiptController', function ($scope, $location, Users,
     //increment count of those splitting it
     var count = 0;
     var splitAmong = [];
-        
+
     for(var i = 0; i < $scope.splitters.length; i++){
+      console.log('Checking: ' + $scope.splitters[i].name);
+      console.log('Selected property: ' + $scope.splitters[i].selected);
       if($scope.splitters[i].selected === "selected"){
         count++;
         splitAmong.push(i);
@@ -71,10 +74,15 @@ billSplitter.controller('receiptController', function ($scope, $location, Users,
     $scope.items.splice([$scope.assignedDish['itemIndex']], 1);
   }
 
+  $scope.finishBill = function () {
+    $location.path('/bill');
+  }
+
   $scope.viewTotals = function () {
     //before routing, calculate tax + tip totals for everyone
     //calculate tax percent
-    var taxPercent = $scope.taxTotal / $scope.billTotal;
+    // var taxPercent = $scope.taxTotal / $scope.billTotal;
+    var taxPercent = $scope.taxTotal / Items.billTotal;
     var tipPercent = $scope.tipPercent / 100;
     for(var i = 0; i < $scope.splitters.length; i++){
       $scope.splitters[i].tax = ($scope.splitters[i].subtotal * taxPercent).toFixed(2);

@@ -64,15 +64,13 @@ input {
 }
 
 .main {
-  
-  // @media screen and (min-width: 400px){
-  //   width: 600px;
-  //   margin: 50px auto 0 auto;
-  //   // border: 2px solid $lime;
-  //   border-radius: 10px;
-  // }
 
-  width: 400px;
+  @media only screen and (min-device-width: 420px) and (orientation: landscape) {
+    // width: 400px;
+    width: 50%;
+  }
+
+  width: 90%;
   height: 60%;
   margin: 50px auto;
   margin-top: 120px;
@@ -127,31 +125,46 @@ input {
     // margin: 0 auto;
     // // margin-left: 150px;
     // // display: inline;
-    width: 180px;
-    float: left;
-    margin-left: 20px;
+
+    // width: 180px;
+    width: 100%;
+    // float: left;
+    // margin-left: 20px;
     margin-bottom: 20px;
   }
 
   .addContainer {
-    width: 500px;
+    @media only screen and (min-device-width: 420px) {
+      display: inline-block;
+      width: 100%;
+    }
+    width: 100%;
     margin: 0 auto;
   }
 
   .addItem {
     clear:both;
+    margin: 0px 10px;
   }
 
   .showTip {
-    float: right;
-    margin-right: 20px;
+    // @media only screen and (min-device-width: 420px) {
+    //   float: right;
+    // }
+    // margin-right: 20px;
+    display: block;
     font-family: $navbar;
     font-size: 1.2em;
   }
 
   .lowerLabel {
     display: inline;
+    margin-right: 5px;
     float: left;
+  }
+
+  #addTipTax {
+    margin: 7 0;
   }
 
   // .lowerLabel {
@@ -194,11 +207,13 @@ input {
     color: white;
   }
 
-  // #addFriend, #addedUsers, #viewTotals {
-  //   width: 100px;
-  //   display: inline-block;
-  // }
+  .clearfix {
+    clear:both;
+  }
 
+  // #viewTotals {
+  //   margin-left: 20px;
+  // }
 
   table {
     margin: 0 auto;
@@ -209,6 +224,9 @@ input {
   }
   td {
     width: 100px;
+  }
+  tr {
+    padding: 10px 0px;
   }
   tr:hover {
     color: $fuschia;
@@ -233,16 +251,34 @@ img {
 }
 
 #quantity {
+  @media only screen and (min-device-width: 420px) {
+    display: inline-block;
+    width: 15%;
+    // width: 55px;
+  }
+  display: block;
   width: 55px;
 }
 
 #description {
-  width: 245px;
+  @media only screen and (min-device-width: 420px) {
+    display: inline-block;
+    width: 55%;
+    // width: 230px;
+  }
+  display: block;
+  width: 70%;
   @include inputGlobalStyle;
 }
 
 #price {
-  width: 70px;
+  @media only screen and (min-device-width: 420px) {
+    display: inline-block;
+    width: 20%;
+    // width: 70px;
+  }
+  display: block;
+  width: 60%;
   @include inputGlobalStyle;
 }
 
@@ -266,7 +302,6 @@ img {
 // }
 
 .selected {
-  // background-color: $fuschia;
   color: $fuschia;
   font-weight: 400;
 }
@@ -290,6 +325,10 @@ div:hover {
   overflow-x: hidden;
   font-family: $navbar;
   font-size: 1.2em;
+}
+
+#backToTotals {
+  width: 60px;
 }
 
 // #tip, #tax {

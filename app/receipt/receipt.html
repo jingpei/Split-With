@@ -1,5 +1,5 @@
 <div class="main">
-  <p class="heading">Receipt Items:</p>
+<!--   <p class="heading">Receipt Items:</p>
   <div id="tipContainer">
     <form class="tipTaxForm" validate>
       <div class="lowerLabel">
@@ -17,7 +17,7 @@
       <p>Total Tax: ${{ taxTotal }}</p>
       <p>Tip: {{ tipPercent }}%</p>
     </div>
-  </div>
+  </div> -->
   
   <form class="addItem" validate>
     <p class="heading">What did you eat?</p>
@@ -27,7 +27,7 @@
       <input id="price" type="number" placeholder="price" ng-model="item.price"></input>
     </div>
     <button ng-click="addItem(item)">Submit</button>
-    <button id="viewTotals" ng-click="viewTotals()">View Totals</button>
+    <button id="finishBill" ng-click="finishBill()">Tip + Tax</button>
   </form>
 
   <div class="container">

@@ -1,4 +1,4 @@
-billSplitter.controller('personController', function($scope, $routeParams, Users){
+billSplitter.controller('personController', function($scope, $location, $routeParams, Users){
   $scope.splitters = Users.splitters;
   $scope.name = $routeParams.selected_person;
 
@@ -6,6 +6,10 @@ billSplitter.controller('personController', function($scope, $routeParams, Users
     if($scope.splitters[i].name === $scope.name){
       $scope.person = $scope.splitters[i];
     }
+  }
+
+  $scope.allTotals = function () {
+    $location.path('/total');
   }
 
   console.log($scope.total);

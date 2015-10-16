@@ -1,5 +1,5 @@
 <div class="main">
-  <p class='header'>Total for: {{ name }}</p>
+  <p class="heading">Total for: {{ name }}</p>
   <table>
     <tr ng-repeat="item in person.purchased">
       <td>{{ item.dish }}</td>
@@ -22,4 +22,7 @@
       <td>${{ person.total }}</td>
     </tr>
   </table>
+
+<button id="backToTotals" ng-click="allTotals()"><<<</button>
 </div>
+

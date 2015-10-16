@@ -11,5 +11,8 @@ billSplitter.controller('totalController', function($scope, $location, Users, It
   }
 
   $scope.total.toFixed(2);
+  var stringTotal = String($scope.total).substring(0,5);
+  var reparsed = parseFloat(stringTotal);
+  $scope.total = reparsed;
 
 })

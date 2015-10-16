@@ -1,0 +1,26 @@
+<div class="main">
+  <p class="heading">Receipt Items:</p>
+  <div id="tipContainer">
+    <form class="tipTaxForm" validate>
+      <div class="lowerLabel">
+        <input id="tip" type="number" placeholder="tip %" ng-model="bill.tip"></input>
+        <span>(e.g. 15, 18, 20)</span>
+      </div>
+      <div class="lowerLabel">
+        <input id="tax" type="number" placeholder="tax" ng-model="bill.tax"></input>
+        <span>(e.g. 6.50)</span>
+      </div>
+      <div class="lowerLabel"><button id="addTipTax" ng-click="calculateTipTax(bill)">Add</button></div>
+    </form>
+  </div>
+  
+  <div class="clearfix"></div>
+
+  <div class="showTip">
+    <p>Total Tax: ${{ taxTotal }}</p>
+    <p>Tip: {{ tipPercent }}%</p>
+  </div>
+
+  <button id="viewTotals" ng-click="viewTotals()">View Totals</button>
+
+</div>
