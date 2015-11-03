@@ -10,6 +10,10 @@ billSplitter.config(function ($routeProvider) {
       templateUrl: 'app/receipt/receipt.html',
       controller: 'receiptController'
     })
+    .when('/splitItems', {
+      templateUrl: 'app/receipt/splitItems.html',
+      controller: 'receiptController'
+    })
     .when('/bill', {
       templateUrl: 'app/bill/bill.html',
       controller: 'receiptController'

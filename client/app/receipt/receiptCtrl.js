@@ -78,6 +78,10 @@ billSplitter.controller('receiptController', function ($scope, $location, Users,
     $location.path('/bill');
   }
 
+  $scope.splitBill = function () {
+    $location.path('/splitItems');
+  }
+
   $scope.viewTotals = function () {
     //before routing, calculate tax + tip totals for everyone
     //calculate tax percent

@@ -1,0 +1,30 @@
+<div class="overlayNotification" ng-if="toggle % 2 === 0">
+  <div class="selectSplitters">
+    <p class="heading" id="overlayHeading">Assign friends to this dish</p>
+    <div class="splitters">
+      <div class="assignedPerson" ng-repeat="person in splitters" ng-click="addPerson()" ng-class="person.selected">
+        {{ person.name }}
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+      </div>
+      <div class="paddedBottom"></div>
+    </div>
+    <button id="assignBtn" ng-click="assignPerson()">Split</button>
+  </div>
+</div>
+
+<div class="main">
+  <p class="heading">Who ate what?</p>
+  
+  <div class="container">
+    <!-- <div class="item" ng-repeat="item in items | orderBy: 'item.price'" ng-click="clickChecker()" ng-class="item.selected"> -->
+    <!-- <div class="item" ng-repeat="item in items | orderBy: 'item.price'"> -->
+    <button class="item" ng-repeat="item in items | orderBy: 'item.price'" ng-click="clickChecker()">
+      {{ item.quantity }} x {{ item.description }} - ${{ item.price }}
+    </button>
+    <!-- </div> -->
+  </div>
+
+
+  <button id="finishBill" ng-click="finishBill()">Tip + Tax</button>
+  
+</div>

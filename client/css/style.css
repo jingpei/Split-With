@@ -1,12 +1,10 @@
-@import url(https://fonts.googleapis.com/css?family=Lato);
-@import url(https://fonts.googleapis.com/css?family=Gloria+Hallelujah);
 @import url(https://fonts.googleapis.com/css?family=Quicksand:400,300);
 html {
   padding: 0px 0px;
   margin: 0px 0px; }
 
 body {
-  font-family: "Lato", sans-serif;
+  font-family: "Quicksand", sans-serif;
   padding: 0px 0px;
   margin: 0px 0px;
   overflow-y: hidden; }
@@ -68,8 +66,8 @@ input {
     color: white; }
   .main .container {
     width: 300px;
-    margin: 10px auto;
-    text-align: right;
+    margin: 20px auto;
+    text-align: left;
     font-family: "Quicksand", sans-serif;
     font-weight: 300;
     font-size: 1.5em;
@@ -109,24 +107,6 @@ input {
     font-family: "Quicksand", sans-serif;
     font-size: 10px;
     color: lightgrey; }
-  .main button {
-    border-radius: 5px;
-    border: 1px solid lightgrey;
-    padding: 5px;
-    font-family: "Quicksand", sans-serif;
-    font-weight: 300;
-    font-size: 18px;
-    margin: 5px 2px;
-    width: 120px;
-    height: 35px;
-    display: inline-block;
-    align: center;
-    background-color: #DDE54A;
-    border: 1px solid #DDE54A;
-    margin: 15px auto 0 auto; }
-  .main button:hover {
-    background-color: #153B64;
-    color: white; }
   .main .clearfix {
     clear: both; }
   .main table {
@@ -143,12 +123,32 @@ input {
     font-weight: 400; }
   .main tr:last-child:hover, .main thead > tr:hover {
     color: black; }
+  .main .item {
+    display: block;
+    width: 300px; }
+
+button {
+  border-radius: 5px;
+  border: 1px solid lightgrey;
+  padding: 5px;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  margin: 5px 2px;
+  width: 120px;
+  height: 35px;
+  display: inline-block;
+  align: center;
+  background-color: #DDE54A;
+  border: 1px solid #DDE54A;
+  margin: 15px auto 0 auto; }
+
+button:hover {
+  background-color: #153B64;
+  color: white; }
 
 img {
   display: none; }
-
-.item > div {
-  display: inline-block; }
 
 #tip, #tax {
   width: 80px;
@@ -199,29 +199,76 @@ img {
       width: 20%; } }
 
 .selected {
-  color: #F405F0;
+  background-color: #153B64;
+  color: #DDE54A;
   font-weight: 400; }
 
-div:hover {
-  cursor: pointer; }
+.overlayNotification {
+  width: 100%;
+  height: 100%;
+  z-index: 15;
+  position: relative;
+  top: 0;
+  left: 0; }
+  @media only screen and (min-device-width: 420px) {
+    .overlayNotification {
+      top: 20%; } }
 
 .selectSplitters {
-  width: 300px;
-  height: 200px;
+  position: relative;
+  width: 100%;
+  height: 100%;
   margin: 0px auto;
-  z-index: 2;
-  border-radius: 10px;
   background-color: white;
-  position: fixed;
-  top: 20%;
-  padding: 40px;
   border: 1px solid #DDE54A;
-  overflow-y: scroll;
-  overflow-x: hidden;
   font-family: "Quicksand", sans-serif;
   font-size: 1.2em; }
+  @media only screen and (min-device-width: 420px) {
+    .selectSplitters {
+      width: 40%;
+      height: 70%;
+      top: 20%;
+      border-radius: 10px; } }
+
+.splitters {
+  position: relative;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden; }
+
+.assignedPerson {
+  padding: 20px 30px;
+  font-size: 1.1em;
+  border-bottom: 1px solid #DDE54A; }
+  @media only screen and (min-device-width: 420px) {
+    .assignedPerson {
+      font-size: 1em;
+      padding: 15px 25px; } }
+
+.paddedBottom {
+  height: 60px; }
+
+#assignBtn {
+  width: 100%;
+  height: 60px;
+  bottom: 0px;
+  border-radius: 0;
+  margin: 0 0;
+  z-index: 2;
+  position: absolute; }
+
+#overlayHeading {
+  text-align: center;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  margin: 0 0;
+  border-bottom: 1px solid #DDE54A; }
+  @media only screen and (min-device-width: 420px) {
+    #overlayHeading {
+      font-size: 1em;
+      font-weight: 400; } }
 
 #backToTotals {
-  width: 60px; }
+  width: 50px; }
 
 /*# sourceMappingURL=style.css.map */

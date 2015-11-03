@@ -1,24 +1,4 @@
 <div class="main">
-<!--   <p class="heading">Receipt Items:</p>
-  <div id="tipContainer">
-    <form class="tipTaxForm" validate>
-      <div class="lowerLabel">
-        <input id="tip" type="number" placeholder="tip %" ng-model="bill.tip"></input>
-        <span>(e.g. 15, 18, 20)</span>
-      </div>
-      <div class="lowerLabel">
-        <input id="tax" type="number" placeholder="tax" ng-model="bill.tax"></input>
-        <span>(e.g. 6.50)</span>
-      </div>
-      <div class="lowerLabel"><button id="addTipTax" ng-click="calculateTipTax(bill)">Add</button></div>
-    </form>
-
-    <div class="showTip" ng-hide="noTaxTip === true">
-      <p>Total Tax: ${{ taxTotal }}</p>
-      <p>Tip: {{ tipPercent }}%</p>
-    </div>
-  </div> -->
-  
   <form class="addItem" validate>
     <p class="heading">What did you eat?</p>
     <div class="addContainer">
@@ -26,23 +6,23 @@
       <input id="description" placeholder="description" ng-model="item.description"></input>
       <input id="price" type="number" placeholder="price" ng-model="item.price"></input>
     </div>
-    <button ng-click="addItem(item)">Submit</button>
-    <button id="finishBill" ng-click="finishBill()">Tip + Tax</button>
+    <button ng-click="addItem(item)">Add Item</button>
+    <button ng-click="splitBill()">Split Items</button>
+    <!-- <button id="finishBill" ng-click="finishBill()">Tip + Tax</button> -->
   </form>
 
   <div class="container">
-    <div class="item" ng-repeat="item in items | orderBy: 'item.price'" ng-click="clickChecker()" ng-class="item.selected">
-      <div class="quantity">{{ item.quantity }} x</div>
-      <div class="description">{{ item.description }}</div>
-      <div class="price">${{ item.price }}</div>
+    <!-- <div class="item" ng-repeat="item in items | orderBy: 'item.price'" ng-click="clickChecker()" ng-class="item.selected"> -->
+    <div class="item" ng-repeat="item in items | orderBy: 'item.price'">
+      {{ item.quantity }} x {{ item.description }} - ${{ item.price }}
     </div>
   </div>
 
-  <div class="selectSplitters" ng-if="toggle % 2 === 0">
+<!--   <div class="selectSplitters" ng-if="toggle % 2 === 0">
     <div ng-repeat="person in splitters" ng-click="addPerson()" ng-class="person.selected">
       {{ person.name }}
     </div>
     <button ng-click="assignPerson()">Split</button>
-  </div>
+  </div> -->
   
 </div>
