@@ -214,6 +214,12 @@ input {
   }
 } //main
 
+.showInputs {
+  width: 90%;
+  margin: 0 auto;
+  display: block;
+}
+
 button {
   @include inputGlobalStyle;
   width: 120px;
@@ -246,7 +252,8 @@ img {
     // width: 55px;
   }
   display: block;
-  width: 55px;
+  width: 30%;
+  margin: 10px auto;
 }
 
 #description {
@@ -258,6 +265,7 @@ img {
   display: block;
   width: 70%;
   @include inputGlobalStyle;
+  margin: 10px auto;
 }
 
 #price {
@@ -267,8 +275,9 @@ img {
     // width: 70px;
   }
   display: block;
-  width: 60%;
+  width: 50%;
   @include inputGlobalStyle;
+  margin: 10px auto;
 }
 
 .selected {
@@ -396,6 +405,13 @@ img {
   margin: 15px auto 0 auto; 
 }
 
+.xOut {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  color: lightgrey;
+}
 // STYLING ABOUT PAGE
 #bubbleBlue {
   @include circleDiv;

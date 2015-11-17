@@ -1,12 +1,15 @@
 <div class="main">
+  <p class="heading">What did you eat?</p>
+  <button class="showInputs" ng-click="toggleInputs()">Add Menu Item</button>
   <form class="addItem" validate>
-    <p class="heading">What did you eat?</p>
-    <div class="addContainer">
-      <input id="quantity" type="number" placeholder="qty" ng-model="item.quantity"> x</input>
-      <input id="description" placeholder="description" ng-model="item.description"></input>
-      <input id="price" type="number" placeholder="price" ng-model="item.price"></input>
+    <div ng-if="addMenuItem == true">
+      <div class="addContainer">
+        <input id="quantity" type="number" placeholder="qty" ng-model="item.quantity"></input>
+        <input id="description" placeholder="description" ng-model="item.description"></input>
+        <input id="price" type="number" placeholder="price" ng-model="item.price"></input>
+      </div>
+      <button id="addToBill" ng-click="addItem(item)">Add Item</button>
     </div>
-    <button id="addToBill" ng-click="addItem(item)">Add Item</button>
     <button class="bottomBtn" id="splitBill" ng-click="splitBill()">Split Items</button>
     <!-- <button id="finishBill" ng-click="finishBill()">Tip + Tax</button> -->
   </form>

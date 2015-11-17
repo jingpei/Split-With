@@ -9,14 +9,18 @@ billSplitter.controller('receiptController', function ($scope, $location, Users,
   $scope.toggle = 1;
   $scope.taxTotal = 0;
   $scope.tipPercent = 0;
+  $scope.addMenuItem = false;
 
   console.log($scope.splitters);
 
   $scope.addItem = function (item) {
+    console.log("ITEM IS:");
+    console.log(item);
     $scope.items.push(item);
     Items.billTotal += parseFloat(item.price);
-    $scope.item.selected = "";
+    // item.selected = "";
     $scope.item = {};
+    $scope.addMenuItem = false;
   }
 
   $scope.calculateTipTax = function (bill) {
@@ -39,6 +43,10 @@ billSplitter.controller('receiptController', function ($scope, $location, Users,
     } else {
       $scope.splitters[this.$index].selected = "selected";
     }
+  }
+
+  $scope.toggleInputs = function () {
+    $scope.addMenuItem = true;
   }
 
   $scope.assignPerson = function () {
@@ -80,6 +88,10 @@ billSplitter.controller('receiptController', function ($scope, $location, Users,
 
   $scope.splitBill = function () {
     $location.path('/splitItems');
+  }
+
+  $scope.exit = function () {
+    $scope.toggle++;
   }
 
   $scope.viewTotals = function () {

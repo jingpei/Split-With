@@ -1,6 +1,7 @@
 <div class="overlayNotification" ng-if="toggle % 2 === 0">
   <div class="selectSplitters">
     <p class="heading" id="overlayHeading">Assign friends to this dish</p>
+    <span class="xOut" ng-click="exit()">X</span>
     <div class="splitters">
       <div class="assignedPerson" ng-repeat="person in splitters" ng-click="addPerson()" ng-class="person.selected">
         {{ person.name }}

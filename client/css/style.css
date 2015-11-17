@@ -127,6 +127,11 @@ input {
     display: block;
     width: 300px; }
 
+.showInputs {
+  width: 90%;
+  margin: 0 auto;
+  display: block; }
+
 button {
   border-radius: 5px;
   border: 1px solid lightgrey;
@@ -162,7 +167,8 @@ img {
 
 #quantity {
   display: block;
-  width: 55px; }
+  width: 30%;
+  margin: 10px auto; }
   @media only screen and (min-width: 420px) {
     #quantity {
       display: inline-block;
@@ -177,7 +183,8 @@ img {
   font-family: "Quicksand", sans-serif;
   font-weight: 300;
   font-size: 18px;
-  margin: 5px 2px; }
+  margin: 5px 2px;
+  margin: 10px auto; }
   @media only screen and (min-width: 420px) {
     #description {
       display: inline-block;
@@ -185,14 +192,15 @@ img {
 
 #price {
   display: block;
-  width: 60%;
+  width: 50%;
   border-radius: 5px;
   border: 1px solid lightgrey;
   padding: 5px;
   font-family: "Quicksand", sans-serif;
   font-weight: 300;
   font-size: 18px;
-  margin: 5px 2px; }
+  margin: 5px 2px;
+  margin: 10px auto; }
   @media only screen and (min-width: 420px) {
     #price {
       display: inline-block;
@@ -323,6 +331,13 @@ img {
       background-color: #DDE54A;
       border: 1px solid #DDE54A;
       margin: 15px auto 0 auto; } }
+
+.xOut {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  color: lightgrey; }
 
 #bubbleBlue {
   border-radius: 50%;
