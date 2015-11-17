@@ -3,7 +3,7 @@ billSplitter.controller('totalController', function($scope, $location, Users, It
   $scope.total = 0;
 
   $scope.routeToPerson = function() {
-    $location.path('/' + $scope.splitters[this.$index].name);
+    $location.path('/individual/' + $scope.splitters[this.$index].name);
   }
 
   for(var i = 0; i < $scope.splitters.length; i++){

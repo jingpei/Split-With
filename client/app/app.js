@@ -22,7 +22,11 @@ billSplitter.config(function ($routeProvider) {
       templateUrl: 'app/total/total.html',
       controller: 'totalController'
     })
-    .when('/:selected_person', {
+    .when('/about', {
+      templateUrl: 'app/about/about.html',
+      controller: 'splittersController'
+    })
+    .when('/individual/:selected_person', {
       templateUrl: 'app/person/person.html',
       controller: 'personController'
     })

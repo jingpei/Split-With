@@ -6,8 +6,8 @@
       <input id="description" placeholder="description" ng-model="item.description"></input>
       <input id="price" type="number" placeholder="price" ng-model="item.price"></input>
     </div>
-    <button ng-click="addItem(item)">Add Item</button>
-    <button ng-click="splitBill()">Split Items</button>
+    <button id="addToBill" ng-click="addItem(item)">Add Item</button>
+    <button class="bottomBtn" id="splitBill" ng-click="splitBill()">Split Items</button>
     <!-- <button id="finishBill" ng-click="finishBill()">Tip + Tax</button> -->
   </form>
 

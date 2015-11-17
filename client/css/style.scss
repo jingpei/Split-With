@@ -17,6 +17,12 @@ $white: #FFFFFF;
   margin: 5px 2px;
 }
 
+@mixin circleDiv {
+  border-radius: 50%;
+  border: none;
+  position: fixed;
+}
+
 html {
   padding: 0px 0px;
   margin: 0px 0px;
@@ -61,7 +67,7 @@ input {
 
 .main {
 
-  @media only screen and (min-device-width: 420px) and (orientation: landscape) {
+  @media only screen and (min-width: 420px) and (orientation: landscape) {
     // width: 400px;
     width: 50%;
   }
@@ -122,7 +128,7 @@ input {
   }
 
   .addContainer {
-    @media only screen and (min-device-width: 420px) {
+    @media only screen and (min-width: 420px) {
       display: inline-block;
       width: 100%;
     }
@@ -136,7 +142,7 @@ input {
   }
 
   .showTip {
-    // @media only screen and (min-device-width: 420px) {
+    // @media only screen and (min-width: 420px) {
     //   float: right;
     // }
     // margin-right: 20px;
@@ -234,7 +240,7 @@ img {
 }
 
 #quantity {
-  @media only screen and (min-device-width: 420px) {
+  @media only screen and (min-width: 420px) {
     display: inline-block;
     width: 15%;
     // width: 55px;
@@ -244,7 +250,7 @@ img {
 }
 
 #description {
-  @media only screen and (min-device-width: 420px) {
+  @media only screen and (min-width: 420px) {
     display: inline-block;
     width: 55%;
     // width: 230px;
@@ -255,7 +261,7 @@ img {
 }
 
 #price {
-  @media only screen and (min-device-width: 420px) {
+  @media only screen and (min-width: 420px) {
     display: inline-block;
     width: 20%;
     // width: 70px;
@@ -272,7 +278,7 @@ img {
 }
 
 .overlayNotification {
-  @media only screen and (min-device-width: 420px) {
+  @media only screen and (min-width: 420px) {
     top: 20%;
   }
   width: 100%;
@@ -284,7 +290,13 @@ img {
 }
 
 .selectSplitters {  
-  @media only screen and (min-device-width: 420px) {
+  @media only screen and (min-width: 600px) {
+    width: 80%;
+    height: 70%;
+    top: 20%;
+    border-radius: 10px;
+  }
+  @media only screen and (min-width: 700px) {
     width: 40%;
     height: 70%;
     top: 20%;
@@ -308,7 +320,7 @@ img {
 }
 
 .assignedPerson {
-  @media only screen and (min-device-width: 420px) {
+  @media only screen and (min-width: 420px) {
     font-size: 1em;
     padding: 15px 25px;
   }
@@ -332,7 +344,7 @@ img {
 }
 
 #overlayHeading {
-  @media only screen and (min-device-width: 420px) {
+  @media only screen and (min-width: 420px) {
     font-size: 1em;
     font-weight: 400;
   }
@@ -345,4 +357,60 @@ img {
 
 #backToTotals {
   width: 50px;
+}
+
+.bottomBtn {
+  @media only screen and (min-width: 420px) {
+    @include inputGlobalStyle;
+    width: 120px;
+    height: 35px;
+    display: inline-block;
+    align: center;
+    background-color: $lime;
+    border: 1px solid $lime;
+    margin: 15px auto 0 auto;
+    position: relative;
+  }
+  width: 100%;
+  height: 60px;
+  bottom: 0px;
+  left: 0px;
+  border-radius: 0;
+  margin: 0 0; 
+  z-index: 2;
+  position: fixed;
+}
+
+#addFriend, #addToBill {
+  @media only screen and (min-width: 420px) {
+    @include inputGlobalStyle;
+    width: 120px;
+    height: 35px;
+    display: inline-block;
+    align: center;
+    background-color: $lime;
+    border: 1px solid $lime;
+    margin: 15px auto 0 auto;
+  }
+  display: block;
+  margin: 15px auto 0 auto; 
+}
+
+// STYLING ABOUT PAGE
+#bubbleBlue {
+  @include circleDiv;
+  background-color: $deepBlue;
+  left: -10px;
+  width: 250px;
+  height: 250px;
+}
+
+#bubbleGreen {
+  @include circleDiv;
+  background-color: $lime;
+  left: 100px;
+  top: 70px;
+  width: 280px;
+  height: 280px;
+  z-index: 15;
 }
