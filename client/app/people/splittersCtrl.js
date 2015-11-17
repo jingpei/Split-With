@@ -14,6 +14,7 @@ billSplitter.controller('splittersController', function ($scope, $location, User
     $scope.users.splitters.push(user);
     $scope.name = "";
     $('input').focus();
+    $('#addFriend').focusout();
   }
 
   $scope.shareData = function(){
