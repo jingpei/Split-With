@@ -35,6 +35,7 @@ billSplitter.controller('receiptController', function ($scope, $location, Users,
     $scope.assignedDish = $scope.items[this.$index];
     $scope.assignedDish.itemIndex = this.$index;
     $scope.items[this.$index].selected = "selected";
+    $scope.currentIndex = this.$index;
   }
 
   $scope.addPerson = function () {
@@ -78,8 +79,9 @@ billSplitter.controller('receiptController', function ($scope, $location, Users,
 
     //then untoggle
     $scope.toggle++;
-    //then remove the divided item
-    $scope.items.splice([$scope.assignedDish['itemIndex']], 1);
+    // //then remove the divided item
+    // $scope.items.splice([$scope.assignedDish['itemIndex']], 1);
+    $('#check_' + $scope.currentIndex).addClass('assignedSplitters');
   }
 
   $scope.finishBill = function () {
@@ -91,6 +93,7 @@ billSplitter.controller('receiptController', function ($scope, $location, Users,
   }
 
   $scope.exit = function () {
+    console.log("Toggled")
     $scope.toggle++;
   }
 
