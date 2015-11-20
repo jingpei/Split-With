@@ -1,10 +1,11 @@
 <div class="overlayNotification" ng-if="toggle % 2 === 0">
   <div class="selectSplitters">
+    <span class="fa fa-times" aria-hidden="true" ng-click="exit()"></span>
     <p class="heading" id="overlayHeading">Assign friends to this dish</p>
     <div class="splitters">
       <div class="assignedPerson" ng-repeat="person in splitters" ng-click="addPerson()" ng-class="person.selected">
         {{ person.name }}
-        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+        <span class="fa fa-plus" aria-hidden="true"></span>
       </div>
       <div class="paddedBottom"></div>
     </div>
@@ -13,18 +14,20 @@
 </div>
 
 <div class="main">
+      
   <p class="heading">Who ate what?</p>
   
   <div class="container">
     <!-- <div class="item" ng-repeat="item in items | orderBy: 'item.price'" ng-click="clickChecker()" ng-class="item.selected"> -->
     <!-- <div class="item" ng-repeat="item in items | orderBy: 'item.price'"> -->
-    <button class="item" ng-repeat="item in items | orderBy: 'item.price'" ng-click="clickChecker()">
+    <button class="item" ng-repeat="item in items track by $index | orderBy: 'item.price'" ng-click="clickChecker()">
+      <span class="fa fa-check-circle-o" id="check_{{$index}}" aria-hidden="true"></span>
       {{ item.quantity }} x {{ item.description }} - ${{ item.price }}
     </button>
     <!-- </div> -->
   </div>
 
 
-  <button id="finishBill" ng-click="finishBill()">Tip + Tax</button>
+  <button class="bottomBtn" id="finishBill" ng-click="finishBill()">Tip + Tax</button>
   
 </div>

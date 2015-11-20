@@ -9,14 +9,18 @@ billSplitter.controller('receiptController', function ($scope, $location, Users,
   $scope.toggle = 1;
   $scope.taxTotal = 0;
   $scope.tipPercent = 0;
+  $scope.addMenuItem = false;
 
   console.log($scope.splitters);
 
   $scope.addItem = function (item) {
+    console.log("ITEM IS:");
+    console.log(item);
     $scope.items.push(item);
     Items.billTotal += parseFloat(item.price);
-    $scope.item.selected = "";
+    // item.selected = "";
     $scope.item = {};
+    $scope.addMenuItem = false;
   }
 
   $scope.calculateTipTax = function (bill) {
@@ -31,6 +35,7 @@ billSplitter.controller('receiptController', function ($scope, $location, Users,
     $scope.assignedDish = $scope.items[this.$index];
     $scope.assignedDish.itemIndex = this.$index;
     $scope.items[this.$index].selected = "selected";
+    $scope.currentIndex = this.$index;
   }
 
   $scope.addPerson = function () {
@@ -39,6 +44,10 @@ billSplitter.controller('receiptController', function ($scope, $location, Users,
     } else {
       $scope.splitters[this.$index].selected = "selected";
     }
+  }
+
+  $scope.toggleInputs = function () {
+    $scope.addMenuItem = true;
   }
 
   $scope.assignPerson = function () {
@@ -70,8 +79,9 @@ billSplitter.controller('receiptController', function ($scope, $location, Users,
 
     //then untoggle
     $scope.toggle++;
-    //then remove the divided item
-    $scope.items.splice([$scope.assignedDish['itemIndex']], 1);
+    // //then remove the divided item
+    // $scope.items.splice([$scope.assignedDish['itemIndex']], 1);
+    $('#check_' + $scope.currentIndex).addClass('assignedSplitters');
   }
 
   $scope.finishBill = function () {
@@ -80,6 +90,11 @@ billSplitter.controller('receiptController', function ($scope, $location, Users,
 
   $scope.splitBill = function () {
     $location.path('/splitItems');
+  }
+
+  $scope.exit = function () {
+    console.log("Toggled")
+    $scope.toggle++;
   }
 
   $scope.viewTotals = function () {

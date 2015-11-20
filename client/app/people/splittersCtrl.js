@@ -13,6 +13,8 @@ billSplitter.controller('splittersController', function ($scope, $location, User
     user['tax'] = 0;
     $scope.users.splitters.push(user);
     $scope.name = "";
+    $('#addFriend').focusout();
+    $('input').focus();
   }
 
   $scope.shareData = function(){

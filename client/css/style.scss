@@ -17,6 +17,12 @@ $white: #FFFFFF;
   margin: 5px 2px;
 }
 
+@mixin circleDiv {
+  border-radius: 50%;
+  border: none;
+  position: fixed;
+}
+
 html {
   padding: 0px 0px;
   margin: 0px 0px;
@@ -33,7 +39,7 @@ header > a {
   margin: 0 0;
   padding: 10 0 20 0;
   background-color: $deepBlue;
-  height: 50px;
+  height: 70px;
   font-family: $navbar;
   font-weight: 300;
   font-size: 2.8em;
@@ -46,8 +52,9 @@ header > a {
   z-index: 10;
 }
 
-a {
+a, a:hover, a:focus {
   text-decoration: none;
+  color: $lime;
 }
 
 input:focus, button:focus {
@@ -61,7 +68,7 @@ input {
 
 .main {
 
-  @media only screen and (min-device-width: 420px) and (orientation: landscape) {
+  @media only screen and (min-width: 420px) and (orientation: landscape) {
     // width: 400px;
     width: 50%;
   }
@@ -126,8 +133,10 @@ input {
   }
 
   .addContainer {
-    @media only screen and (min-device-width: 420px) {
-      display: inline-block;
+    @media only screen and (min-width: 420px) {
+      // display: inline-block;
+      display: flex;
+      justify-content: space-between;
       width: 100%;
     }
     width: 100%;
@@ -140,10 +149,6 @@ input {
   }
 
   .showTip {
-    // @media only screen and (min-device-width: 420px) {
-    //   float: right;
-    // }
-    // margin-right: 20px;
     display: block;
     font-family: $navbar;
     font-size: 1.2em;
@@ -193,14 +198,21 @@ input {
 
   .item {
     display: block;
-    width: 300px;
+    width: 100%;
+    position: relative;
   }
 } //main
+
+.showInputs {
+  width: 100%;
+  margin: 20px auto;
+  display: block;
+}
 
 button {
   @include inputGlobalStyle;
   width: 120px;
-  height: 35px;
+  height: 40px;
   display: inline-block;
   align: center;
   background-color: $lime;
@@ -208,9 +220,13 @@ button {
   margin: 15px auto 0 auto;
 }
 
-button:hover {
+button:hover, #addFriend:hover, #addToBill:hover {
   background-color: $deepBlue;
   color: white;
+}
+
+button:hover span {
+  color: $lime;
 }
 
 img {
@@ -223,17 +239,18 @@ img {
 }
 
 #quantity {
-  @media only screen and (min-device-width: 420px) {
+  @media only screen and (min-width: 420px) {
     display: inline-block;
     width: 15%;
     // width: 55px;
   }
   display: block;
-  width: 55px;
+  width: 30%;
+  margin: 10px auto;
 }
 
 #description {
-  @media only screen and (min-device-width: 420px) {
+  @media only screen and (min-width: 420px) {
     display: inline-block;
     width: 55%;
     // width: 230px;
@@ -241,17 +258,19 @@ img {
   display: block;
   width: 70%;
   @include inputGlobalStyle;
+  margin: 10px auto;
 }
 
 #price {
-  @media only screen and (min-device-width: 420px) {
+  @media only screen and (min-width: 420px) {
     display: inline-block;
     width: 20%;
     // width: 70px;
   }
   display: block;
-  width: 60%;
+  width: 50%;
   @include inputGlobalStyle;
+  margin: 10px auto;
 }
 
 .selected {
@@ -261,7 +280,7 @@ img {
 }
 
 .overlayNotification {
-  @media only screen and (min-device-width: 420px) {
+  @media only screen and (min-width: 420px) {
     top: 20%;
   }
   width: 100%;
@@ -273,7 +292,13 @@ img {
 }
 
 .selectSplitters {  
-  @media only screen and (min-device-width: 420px) {
+  @media only screen and (min-width: 600px) {
+    width: 80%;
+    height: 70%;
+    top: 20%;
+    border-radius: 10px;
+  }
+  @media only screen and (min-width: 700px) {
     width: 40%;
     height: 70%;
     top: 20%;
@@ -297,10 +322,11 @@ img {
 }
 
 .assignedPerson {
-  @media only screen and (min-device-width: 420px) {
+  @media only screen and (min-width: 420px) {
     font-size: 1em;
     padding: 15px 25px;
   }
+  position: relative;
   padding: 20px 30px;
   font-size: 1.1em;
   border-bottom: 1px solid $lime;
@@ -314,9 +340,9 @@ img {
 
 .fa-check-circle-o {
   position: absolute;
-  top: 5px;
-  left: 10px;
   font-size: 1.5em;
+  top: 10px;
+  left: 10px;
   color: grey;
 }
 
@@ -328,21 +354,24 @@ img {
   height: 60px;
 }
 
+
 #assignBtn {
   width: 100%;
   height: 60px;
   bottom: 0px;
   border-radius: 0;
+  border: none;
   margin: 0 0; 
   z-index: 2;
   position: absolute;
 }
 
 #overlayHeading {
-  @media only screen and (min-device-width: 420px) {
+  @media only screen and (min-width: 420px) {
     font-size: 1em;
     font-weight: 400;
   }
+  position: relative;
   text-align: center;
   padding: 10px 20px;
   font-size: 1.2em;
